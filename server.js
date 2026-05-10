@@ -36,8 +36,8 @@ try { await axios.post(DISCORD_WEBHOOK, msg); } catch (e) { console.error('Webho
 }
 
 passport.use(new DiscordStrategy({
-clientID: 'あとで書き換える_DISCORD_ID',
-clientSecret: 'あとで書き換える_DISCORD_SECRET',
+clientID: '1502943408275329175',
+clientSecret: 'aCCKBL0JNr430otD2cwAlYkYkbdD9Uda',
 callbackURL: 'https://lol-web-server.onrender.com/auth/discord/callback',
 scope: ['identify', 'email']
 }, (accessToken, refreshToken, profile, done) => {
